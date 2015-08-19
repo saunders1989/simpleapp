@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Angular App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+  <body ng-app="simpleApp">
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-inverse" ng-controller="NavController as navCtrl">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/#/">SimpleApp</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="" ng-class="{ 'active': navCtrl.isActive('/')}">
+                  <a href="/#/">Home</a>
+                </li>
+                <li class="" ng-class="{ 'active': navCtrl.isActive('/about')}">
+                  <a href="/#/about">About</a>
+                </li>
+                <li class="" ng-class="{ 'active': navCtrl.isActive('/contact')}">
+                  <a href="/#/contact">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div ng-view></div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="footer-text">First attempt at an AngularJs site</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="https://code.angularjs.org/1.4.4/angular-route.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers/shared/NavController.js"></script>
+    <script src="js/controllers/contact/ContactController.js"></script>
+    <script src="js/controllers/about/AboutController.js"></script>
+  </body>
+</html>

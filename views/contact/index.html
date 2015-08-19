@@ -1,0 +1,37 @@
+<div class="col-xs-12">
+  <h1>{{contactCtrl.title}}</h1>
+</div>
+<div class="col-xs-12 col-sm-6">
+  <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.</p>
+  <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.</p>
+  <p>Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. But I can't give you this case, it don't belong to me. Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass.</p>
+</div>
+<div class="col-xs-12 col-sm-6">
+  <div class="alert alert-success" ng-show="contactCtrl.success">
+    <button class="close" data-dismiss="alert">x</button>
+    <strong>Success! </strong> Your message was successfully sent.
+  </div>
+  <form name="contactform" ng-submit="contactCtrl.submitForm(contactform)" novalidate>
+    <div class="form-group clearfix">
+      <label for="firstname">First Name</label>
+      <input id="firstname" name="firstname" ng-model="user.firstname" class="form-control" type="text" placeholder="First Name" required />
+      <span class="form-error help-block" ng-show="contactform.firstname.$error.required && !contactform.firstname.$pristine"><sup>*</sup>This field is required</span>
+    </div>
+    <div class="form-group clearfix">
+      <label for="lastname">Last Name</label>
+      <input id="lastname" name="lastname" class="form-control" ng-model="user.lastname" type="text" placeholder="Last Name" required />
+      <span class="form-error help-block" ng-show="contactform.lastname.$error.required && !contactform.lastname.$pristine"><sup>*</sup>This field is required</span>
+    </div>
+    <div class="form-group clearfix">
+      <label for="email">Email Address</label>
+      <input id="email" name="email" class="form-control" ng-model="user.email" type="email" placeholder="Email Address" required />
+      <span class="form-error help-block" ng-show="contactform.email.$error.required && !contactform.email.$pristine"><sup>*</sup>This field is required</span>
+      <span class="form-error help-block" ng-show="contactform.email.$error.email && !contactform.email.$pristine"><sup>*</sup>Invalid Email Address</span>
+    </div>
+    <div class="form-group">
+      <label for="telephone">Telephone</label>
+      <input id="telephone" name="telephone" class="form-control" ng-model="user.telephone" type="tel" placeholder="Telephone" />
+    </div>
+    <button type="submit" class="btn btn-default" ng-disabled="contactform.$invalid">Submit</button>
+  </form>
+</div>

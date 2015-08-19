@@ -1,0 +1,12 @@
+.gallery-image-container {
+  margin-bottom: 20px;
+}
+
+.gallery-image__link {
+  display: block;
+  opacity: .5;
+
+  &--active {
+    opacity: 1;
+  }
+}
