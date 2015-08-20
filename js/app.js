@@ -9,6 +9,11 @@ angular.module('simpleApp', ['ngRoute'])
         controller: 'AboutController',
         controllerAs: 'aboutCtrl'
       })
+      .when('/services', {
+        templateUrl: 'views/services/index.html'
+        // controller: 'AboutController',
+        // controllerAs: 'aboutCtrl'
+      })
       .when('/contact', {
         templateUrl: 'views/contact/index.html',
         controller: 'ContactController',
