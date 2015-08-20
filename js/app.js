@@ -1,26 +1,29 @@
-angular.module('simpleApp', ['ngRoute'])
-  .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    $routeProvider
-      .when('/', {
+angular.module('simpleApp', ['ui.router'])
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+      .state('/', {
+        url: '/',
         templateUrl: 'views/home/index.html'
       })
-      .when('/about', {
+      .state('/about', {
+        url: '/about',
         templateUrl: 'views/about/index.html',
         controller: 'AboutController',
         controllerAs: 'aboutCtrl'
       })
-      .when('/services', {
-        templateUrl: 'views/services/index.html'
-        // controller: 'AboutController',
-        // controllerAs: 'aboutCtrl'
+      .state('/services', {
+        url: '/services',
+        templateUrl: 'views/services/index.html',
+        controller: 'ServicesController',
+        controllerAs: 'servicesCtrl'
       })
-      .when('/contact', {
+      .state('/contact', {
+        url: '/contact',
         templateUrl: 'views/contact/index.html',
         controller: 'ContactController',
         controllerAs: 'contactCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
 
       // if(window.history && window.history.pushState) {
@@ -29,4 +32,4 @@ angular.module('simpleApp', ['ngRoute'])
       //     requireBase: false
       //   });
       // }
-  }]);
+  });
